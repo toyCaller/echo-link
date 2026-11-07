@@ -1,0 +1,29 @@
+# Draft for a merge request to https://gitlab.com/fdroid/fdroiddata (metadata/io.github.toycaller.echolink.yml)
+Categories:
+  - Connectivity
+  - Development
+License: MIT
+SourceCode: https://github.com/toyCaller/echo-link
+IssueTracker: https://github.com/toyCaller/echo-link/issues
+
+AutoName: Echo Link
+
+RepoType: git
+Repo: https://github.com/toyCaller/echo-link.git
+
+Builds:
+  - versionName: 0.2.0
+    versionCode: 2
+    commit: v0.2.0
+    subdir: app/android/app
+    sudo:
+      - apt-get update
+      - apt-get install -y npm
+    init: cd ../.. && npm ci && npm run build && npx cap sync android
+    gradle:
+      - yes
+
+AutoUpdateMode: Version
+UpdateCheckMode: Tags
+CurrentVersion: 0.2.0
+CurrentVersionCode: 2

@@ -1,0 +1,9 @@
+Echo Link pairs your Android phone with your Linux laptop so you stay in control of the AI agent working on it.
+
+* Approve or deny each action the agent wants to take: running a command, writing a file, opening a web page. You see the exact command first.
+* Send files from the phone to the laptop, and save files from the laptop on the phone.
+* Pair once by scanning a QR code or entering a 6-digit PIN. Nothing goes through a cloud service.
+* Connects over Wi-Fi, a USB cable, or Wireless debugging. The laptop opens the link by itself.
+* Every message is encrypted with a key that only your phone and your laptop have.
+
+The laptop side is the echo-link package (Arch Linux / Omarchy). It runs as a small background service with an `echolink` command.

@@ -1,0 +1,11 @@
+[Unit]
+Description=Echo Link: approve your laptop's AI agent from your phone
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/node /usr/lib/echo-link/echolinkd.mjs
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target

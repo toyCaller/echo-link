@@ -1,0 +1,27 @@
+# Maintainer: toyCaller <353577773+toyCaller@users.noreply.github.com>
+pkgname=echo-link
+pkgver=0.2.0
+pkgrel=1
+pkgdesc="Approve your laptop's AI agent from your phone, and move files both ways (Wi-Fi, USB or Wireless debugging)"
+arch=('any')
+url="https://github.com/toyCaller/echo-link"
+license=('MIT')
+depends=('nodejs>=22' 'qrencode')
+optdepends=('android-tools: phone link over USB / Wireless debugging'
+            'avahi: announce the laptop on the local network'
+            'claude-code: run the agent with `echolink run`')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+  install -d "$pkgdir/usr/lib/echo-link/lib"
+  install -m644 daemon/lib/*.mjs "$pkgdir/usr/lib/echo-link/lib/"
+  install -m755 daemon/echolinkd.mjs daemon/echolink.mjs "$pkgdir/usr/lib/echo-link/"
+  install -d "$pkgdir/usr/bin"
+  printf '#!/bin/sh\nexec node /usr/lib/echo-link/echolink.mjs "$@"\n' > "$pkgdir/usr/bin/echolink"
+  chmod 755 "$pkgdir/usr/bin/echolink"
+  install -Dm644 packaging/systemd/echolinkd.service "$pkgdir/usr/lib/systemd/user/echolinkd.service"
+  install -Dm644 README.md "$pkgdir/usr/share/doc/echo-link/README.md"
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/echo-link/LICENSE"
+}

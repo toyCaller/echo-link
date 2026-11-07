@@ -1,0 +1,17 @@
+{
+  "appId": "io.github.toycaller.echolink",
+  "appName": "Echo Link",
+  "webDir": "dist",
+  "android": {
+    "allowMixedContent": true
+  },
+  "server": {
+    "androidScheme": "https",
+    "cleartext": true
+  },
+  "plugins": {
+    "CapacitorHttp": {
+      "enabled": true
+    }
+  }
+}
