@@ -11,7 +11,7 @@ optdepends=('android-tools: phone link over USB / Wireless debugging'
             'avahi: announce the laptop on the local network'
             'claude-code: run the agent with `echolink run`')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
-sha256sums=('SKIP')
+sha256sums=('f631823e0dfb5c53d9209bd43ae3b8e00a2340e4faf1d3c1b895703e1e1a234f')
 
 package() {
   cd "$srcdir/$pkgname-$pkgver"

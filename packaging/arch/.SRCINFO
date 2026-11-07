@@ -1,0 +1,16 @@
+pkgbase = echo-link
+	pkgdesc = Approve your laptop's AI agent from your phone, and move files both ways (Wi-Fi, USB or Wireless debugging)
+	pkgver = 0.2.0
+	pkgrel = 1
+	url = https://github.com/toyCaller/echo-link
+	arch = any
+	license = MIT
+	depends = nodejs>=22
+	depends = qrencode
+	optdepends = android-tools: phone link over USB / Wireless debugging
+	optdepends = avahi: announce the laptop on the local network
+	optdepends = claude-code: run the agent with `echolink run`
+	source = echo-link-0.2.0.tar.gz::https://github.com/toyCaller/echo-link/archive/refs/tags/v0.2.0.tar.gz
+	sha256sums = f631823e0dfb5c53d9209bd43ae3b8e00a2340e4faf1d3c1b895703e1e1a234f
+
+pkgname = echo-link
